@@ -1,2 +1,3 @@
-print("HoLa Mundo")
+var="prueba pipeline"
+print(var+"esta es una prueba")
 
