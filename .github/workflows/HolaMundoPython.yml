@@ -7,9 +7,9 @@ name: PruebaPython
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "aprendiendo-github-actions" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "aprendiendo-github-actions" ]
+    branches: [ "main" ]
      # Triggers the workflow on push or pull request events but only for the "main" branch
  
   
