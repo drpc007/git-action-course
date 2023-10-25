@@ -1,0 +1,48 @@
+name: Python application
+
+on:
+  push:
+    branches: -'aprendiendo-github-actions'
+      -'main'
+      -'release/**'
+    paths: -'**.py'
+
+  pull_request:
+    types:
+      - opened
+    branches: ["main"]
+
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Create Tag"
+        type: boolean
+        default: true
+    enviroment:
+      desription: "nombre"
+      type: "string"
+      required: "True"
+
+issue_comment:
+  name: hola mundo python
+
+jobs:
+  build1:
+    runs-on: ubuntu-latest
+  pr_commented:
+    name: PR commented
+    if: ${{ github.event.issue.pull_request }}
+    echo:
+
+  build2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+
+      - name: script-runing
+        run: python HolaMundo.py
